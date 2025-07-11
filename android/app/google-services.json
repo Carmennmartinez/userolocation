@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "204696312608",
+    "project_id": "userlocation-67584",
+    "storage_bucket": "userlocation-67584.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204696312608:android:14f46695810624108f5545",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204696312608-u3bvnrqotq053kgutnaqf9vunla0lpqu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_application_2",
+            "certificate_hash": "aa209f444985f2c39323e1f62979c1599aa53073"
+          }
+        },
+        {
+          "client_id": "204696312608-ugn6o4qtjpbhgrkcl7cl2tha4tuatqub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxfOAg5m_FBIEY-vwx2TTfnkLVhBWsCNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204696312608-ugn6o4qtjpbhgrkcl7cl2tha4tuatqub.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "204696312608-fsddcl89c7mde8ncs81tthclg2ug10n4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.carmen.userlocation"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204696312608:android:24ccb931d32df6b98f5545",
+        "android_client_info": {
+          "package_name": "com.example.userlocation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204696312608-ugn6o4qtjpbhgrkcl7cl2tha4tuatqub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxfOAg5m_FBIEY-vwx2TTfnkLVhBWsCNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204696312608-ugn6o4qtjpbhgrkcl7cl2tha4tuatqub.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "204696312608-fsddcl89c7mde8ncs81tthclg2ug10n4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.carmen.userlocation"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
