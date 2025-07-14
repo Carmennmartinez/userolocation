@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 
 Future<void> saveLocationToFirestore() async {
   try {
-    // 1. Obtener ubicación actual
+    // 1. Verificar servicios de localización
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) throw Exception('Servicios de localización desactivados');
 
@@ -18,25 +18,34 @@ Future<void> saveLocationToFirestore() async {
       throw Exception('Permiso de localización permanentemente denegado');
     }
 
-    Position position = await Geolocator.getCurrentPosition();
+    // 2. Configurar precisión usando LocationSettings (nuevo estándar)
+    final LocationSettings locationSettings = LocationSettings(
+      accuracy: LocationAccuracy.best,
+      distanceFilter: 0,
+    );
 
-    // 2. Crear campos para Firestore
+    // 3. Obtener posición actual
+    Position position = await Geolocator.getCurrentPosition(
+      locationSettings: locationSettings,
+    );
+
+    // 4. Crear campos para Firestore
     final now = DateTime.now();
     final geopoint = GeoPoint(position.latitude, position.longitude);
     final docId = FirebaseFirestore.instance.collection('Locations').doc().id;
 
-    // 3. Guardar en "Locations"
+    // 5. Guardar en "Locations"
     await FirebaseFirestore.instance.collection('Locations').doc(docId).set({
       'date': now,
       'location': geopoint,
     });
 
-    // 4. Crear ID de documento yyyy-SS para "Locations_Idx"
+    // 6. Crear ID de documento yyyy-SS para "Locations_Idx"
     final year = now.year;
     final weekOfYear = int.parse(DateFormat('w').format(now));
     final idxId = '$year-${weekOfYear.toString().padLeft(2, '0')}';
 
-    // 5. Guardar en "Locations_Idx" con merge
+    // 7. Guardar en "Locations_Idx" con merge
     await FirebaseFirestore.instance.collection('Locations_Idx').doc(idxId).set({
       docId: {
         'date': now,
